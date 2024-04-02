@@ -8,3 +8,10 @@
 //   },
 //   /* 其他 Next.js 配置 */
 // })
+
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
+
+// console.log(process.env.API_URL, 'process.env.API_URL')
+  
