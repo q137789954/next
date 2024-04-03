@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev next dev",
+    "dev": "cross-env NODE_ENV=dev node server.js",
     "qa": "cross-env NODE_ENV=qa next dev",
     "uat": "cross-env NODE_ENV=uat next dev",
     "prod": "cross-env NODE_ENV=prod next dev",
@@ -12,7 +12,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "antd": "^5.16.0",
     "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18"
@@ -25,6 +27,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
+    "http-proxy-middleware": "^3.0.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"

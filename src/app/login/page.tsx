@@ -1,14 +1,20 @@
 "use client"
-
+import { Button } from 'antd';
 // import './page.less';
 
-export default function Login() {
+const Login = () => {
 
-  console.log(process.env.NEXT_PUBLIC_ENV, 'process.env.NEXT_PUBLIC_ENV')
+  const handleLogig = async () => {
+    const data = await fetch('/api/todos/1');
+  }
 
   return (
    <div className='login'>
+    <Button onClick={handleLogig}>
       登录
+    </Button>
    </div>
   );
 }
+
+export default Login
