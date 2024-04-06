@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev node server.js",
+    "devServer": "cross-env NODE_ENV=dev node server.js",
+    "dev": "cross-env NODE_ENV=dev next dev",
     "qa": "cross-env NODE_ENV=qa next dev",
     "uat": "cross-env NODE_ENV=uat next dev",
     "prod": "cross-env NODE_ENV=prod next dev",

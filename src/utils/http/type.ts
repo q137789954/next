@@ -4,6 +4,6 @@ export interface Headers {
 }
 
 
-export interface Option extends Omit<RequestInit, 'Headers'> {
-    
+export interface Option extends Omit<RequestInit, 'headers'> {
+    headers: Headers
 }
