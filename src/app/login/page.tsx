@@ -12,10 +12,10 @@ const Login = () => {
   });
 
   useEffect(() => {
-    (async () => {
-      const data =  await getData()
-      console.log(data, '这里是data');
-    })()
+    // (async () => {
+    //   const data =  await getData()
+    //   console.log(data, '这里是data');
+    // })()
   }, [])
 
   const handleLogig = async () => {

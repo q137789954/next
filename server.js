@@ -6,17 +6,35 @@ const { createProxyMiddleware } = require("http-proxy-middleware")
 const port = process.env.PORT || 3000
 // 判断是否为开发环境
 const dev = process.env.NODE_ENV !== 'prod'
-
+console.log(dev, '是dev环境吗');
 // 初始化 app
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
 // 代理配置表，这里和一般的 webpack 配置是一样的。
 const proxyTable = {
+  // '/api': {
+  //   pathFilter: "**",
+  //   target: 'http://jsonplaceholder.typicode.com',
+  //   pathRewrite: {
+  //     '/^(.*)\/api/': ''
+  //   },
+  //   changeOrigin: true,
+  //   on: {
+  //     proxyReq: (proxyReq, req, res) => {
+  //       /* handle proxyReq */
+  //       // console.log(proxyReq, req, res)
+  //     },
+  //     onError(err, req, res, target) {
+  //       // console.log('(err, req, res, target')
+  //       // console.log(err, req, res, target);
+  //     }
+  //   }
+  // }
   '/api': {
     target: 'http://jsonplaceholder.typicode.com/',
     pathRewrite: {
-      '^/api': ''
+      '/^(.*)\/api/': ''
     },
     changeOrigin: true
   }
