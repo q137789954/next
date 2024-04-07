@@ -7,7 +7,7 @@ class Http {
     "Authorization": this.getTokenBearer(),
     "Content-Type": "application/json",
   };
-  option: Option | undefined;
+  // option: Option | undefined;
 
   constructor(serviceType: string) {
     this.basePath = getServers()[serviceType]
