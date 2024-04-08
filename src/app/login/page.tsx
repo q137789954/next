@@ -1,33 +1,24 @@
-"use client"
-import { useEffect } from 'react';
-import { useRequest } from 'ahooks';
-import { Button, Spin } from 'antd';
-import { getData } from './server';
-// import './page.less';
+"use client";
+import { Button } from "@nextui-org/button";
+import { useRequest } from "ahooks";
+import { getData } from "./server";
 
 const Login = () => {
-
   const { data, error, loading, run } = useRequest(getData, {
-    manual: true
+    manual: true,
   });
 
   const handleLogig = async () => {
-    run()
-  }
+    run();
+  };
 
   return (
-   <div className='login'>
-    {
-      loading && <Spin size='large' />
-    }
-    <Button onClick={handleLogig}>
-      登录
-    </Button>
-    {
-      data && data.id
-    }
-   </div>
+    <div className="login">
+      {loading && <div>加载中</div>}
+      <Button onClick={handleLogig}>登录</Button>
+      {data && data.id}
+    </div>
   );
-}
+};
 
-export default Login
+export default Login;

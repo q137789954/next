@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Link from 'next/link';
+import Link from "next/link";
 import { Inter } from "next/font/google";
+import Provider from './provider';
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  auth
+  auth,
 }: Readonly<{
   children: React.ReactNode;
   auth: React.ReactNode;
@@ -20,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        {auth}
-        <Link href="/login">Open modal</Link>
+        <Provider>
+          {children}
+          {auth}
+          <Link href="/login">Open modal</Link>
+        </Provider>
       </body>
     </html>
   );
