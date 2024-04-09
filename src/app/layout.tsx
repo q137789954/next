@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import Provider from './provider';
 import "./globals.css";
 
+import { setLocale, setUserId } from "@/context";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,6 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
   auth: React.ReactNode;
 }>) {
+
+
+  setLocale('啊实打实的')
+  setUserId('用户id啊,这里是用户id')
+
   return (
     <html lang="en">
       <body className={inter.className}>

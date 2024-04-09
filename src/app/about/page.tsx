@@ -4,6 +4,9 @@ import { update} from '@/store/global';
 import store from '../../store';
 import { getData } from '../login/server';
 import Title from './components/Title';
+import ShowData from './components/ShowData';
+
+import { setLocale, setUserId } from "@/context";
 
 
 export default async function Home() {
@@ -21,6 +24,9 @@ export default async function Home() {
   console.log(data, '服务端获取的数据');
   console.log(state, '服务端store');
 
+  // setLocale('啊实打实的')
+  // setUserId('用户id啊,这里是用户id')
+
   return (
     <div>
       这里是{data.title}
@@ -29,6 +35,7 @@ export default async function Home() {
       </div>
       <Title title={data.title} />
       <Button>11111</Button>
+      <ShowData />
     </div>
   );
 }
